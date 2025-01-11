@@ -84,7 +84,7 @@ def main():
     print(f"Private key (K_inverse): {K_inverse}")
 
     # Plaintext input
-    plaintext = "Vishal"
+    plaintext = "Arya"
     print(f"Plaintext: {plaintext}")
     
     # Print the ASCII values of the plaintext
