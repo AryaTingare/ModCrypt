@@ -1,6 +1,6 @@
 # Modular Arithmetic-Based Cipher
 
-This project demonstrates the encryption and decryption process of the plain text "Vishal" using a modular arithmetic-based cipher.
+This project demonstrates the encryption and decryption process of the plain text "key" using a modular arithmetic-based cipher.
 
 ## Overview
 
@@ -12,20 +12,17 @@ The cipher utilizes modular arithmetic for secure message encryption and decrypt
 
 ### 1. Convert Characters to ASCII Values
 
-Each character in "Vishal" is converted into its corresponding ASCII value:
+Each character in "key" is converted into its corresponding ASCII value:
 
 | Character | ASCII Value |
 |-----------|-------------|
-| V         | 86          |
-| i         | 105         |
-| s         | 115         |
-| h         | 104         |
-| a         | 97          |
-| l         | 108         |
+| k         | 107         |
+| e         | 101         |
+| y         | 121         |
 
-So, the plain text "Vishal" is represented as:
+So, the plain text "key" is represented as:
 
-{86, 105, 115, 104, 97, 108}
+{107, 101, 121}
 
 
 ---
@@ -53,25 +50,19 @@ Where:
 
 #### Encrypted Values:
 
-- V (86) →  C = (86 * 5) mod 323 = 430 mod 323 = 107 
-- i (105) →  C = (105 * 5) mod 323 = 525 mod 323 = 202 
-- s (115) →  C = (115 * 5) mod 323 = 575 mod 323 = 252 
-- h (104) →  C = (104 * 5) mod 323 = 520 mod 323 = 197 
-- a (97) →  C = (97 * 5) mod 323 = 485 mod 323 = 162 
-- l (108) →  C = (108 * 5) mod 323 = 540 mod 323 = 217 
+- k (107) →  C = (107 * 5) mod 323 = 535 mod 323 = 212 
+- e (101) →  C = (101 * 5) mod 323 = 505 mod 323 = 182 
+- y (121) →  C = (121 * 5) mod 323 = 605 mod 323 = 282  
 
 | Character | ASCII Value | Encrypted Value (\( C \)) |
 |-----------|-------------|---------------------------|
-| V         | 86          | 107                       |
-| i         | 105         | 202                       |
-| s         | 115         | 252                       |
-| h         | 104         | 197                       |
-| a         | 97          | 162                       |
-| l         | 108         | 217                       |
+| k         | 107         | 212                       |
+| e         | 101         | 182                       |
+| y         | 121         | 282                       |
 
 The encrypted message is:
 
-{107, 202, 252, 197, 162, 217}
+{212, 182, 282}
 
 
 ---
@@ -97,34 +88,28 @@ Where:
 
 #### Decrypted Values:
 
-- 107 →  P = (107 * 173) mod 323 = 18511 mod 323 = 86  → V
-- 202 →  P = (202 * 173) mod 323 = 34946 mod 323 = 105  → i
-- 252 →  P = (252 * 173) mod 323 = 43644 mod 323 = 115  → s
-- 197 →  P = (197 * 173) mod 323 = 34081 mod 323 = 104  → h
-- 162 →  P = (162 * 173) mod 323 = 28026 mod 323 = 97  → a
-- 217 →  P = (217 * 173) mod 323 = 37541 mod 323 = 108  → l
+- 212 →  P = (212 * 173) mod 323 = 36676 mod 323 = 107  → k
+- 182 →  P = (182 * 173) mod 323 = 31486 mod 323 = 101  → e
+- 282 →  P = (282 * 173) mod 323 = 48786 mod 323 = 121  → y
 
 | Encrypted Value (\( C \)) | Decrypted ASCII Value (\( P \)) | Character |
 |---------------------------|---------------------------------|-----------|
-| 107                       | 86                              | V         |
-| 202                       | 105                             | i         |
-| 252                       | 115                             | s         |
-| 197                       | 104                             | h         |
-| 162                       | 97                              | a         |
-| 217                       | 108                             | l         |
+| 212                       | 107                             | k         |
+| 182                       | 101                             | e         |
+| 282                       | 121                             | y         |
 
 The decrypted message is:
 
-{86, 105, 115, 104, 97, 108} = "Vishal"
+{107, 101, 121} = "key"
 
 
 ---
 
 ## Conclusion
 
-- **Original Text**: "Vishal"
-- **Encrypted Message**: `{107, 202, 252, 197, 162, 217}`
-- **Decrypted Message**: "Vishal"
+- **Original Text**: "key"
+- **Encrypted Message**: `{212, 182, 282}`
+- **Decrypted Message**: "key"
 
 This example illustrates the process of encryption and decryption using a modular arithmetic-based cipher. For real-world applications, larger prime numbers \( p \) and \( q \) should be used for better security.
 
